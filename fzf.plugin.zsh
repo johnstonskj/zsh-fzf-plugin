@@ -98,7 +98,7 @@ fzf_plugin_init() {
         fd --type=d --hidden --exclude .git . "$1"
     }
 
-    show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
+    local show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
     export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
     export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
@@ -117,13 +117,6 @@ fzf_plugin_init() {
             *)            fzf --preview "$show_file_or_dir_preview" "$@" ;;
         esac
     }
-
-    if [[ ! -f "$(xdg_config_for fzf)/fzf-git.sh/fzf-git.sh" ]]; then
-        git submodule init
-        git submodule update
-    else
-        source "$(xdg_config_for fzf)/fzf-git.sh/fzf-git.sh"
-    fi
 }
 .fzf_remember_fn fzf_plugin_init
 
@@ -167,5 +160,12 @@ fzf_plugin_unload() {
 ############################################################################
 
 fzf_plugin_init
+
+if [[ ! -f "$(xdg_config_for fzf)/fzf-git.sh/fzf-git.sh" ]]; then
+    git submodule init
+    git submodule update
+else
+    source "$(xdg_config_for fzf)/fzf-git.sh/fzf-git.sh"
+fi
 
 true
