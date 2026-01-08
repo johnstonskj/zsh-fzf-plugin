@@ -1,18 +1,18 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 #
 # Plugin Name: fzf
+# Description: Zsh plugin to integrate the fzf tool into Zsh.
 # Repository: https://github.com/johnstonskj/zsh-fzf-plugin
-#
-# Description:
-#
-#   Plugin to integrate the fzf tool into Zsh.
 #
 # Public variables:
 #
 # * `FZF`; plugin-defined global associative array with the following keys:
-#   * \`_ALIASES\`; a list of all aliases defined by the plugin.
-#   * \`_FUNCTIONS\`; a list of all functions defined by the plugin.
-#   * \`_PLUGIN_DIR\`; the directory the plugin is sourced from.
+#   * `_ALIASES`; a list of all aliases defined by the plugin.
+#   * `_FUNCTIONS`; a list of all functions defined by the plugin.
+#   * `_PLUGIN_DIR`; the directory the plugin is sourced from.
+#   * `_OLD_DEFAULT_COMMAND`; the previous value of FZF_DEFAULT_COMMAND.
+#   * `_OLD_CTRL_T_COMMAND`; the previous value of FZF_CTRL_T_COMMAND.
+#   * `_OLD_ALT_C_COMMAND`; the previous value of FZF_ALT_C_COMMAND.
 # * `FZF_DEFAULT_COMMAND`;
 # * `FZF_CTRL_T_COMMAND`; 
 # * `FZF_ALT_C_COMMAND`;
