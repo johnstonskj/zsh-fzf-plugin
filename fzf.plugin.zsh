@@ -32,6 +32,7 @@ FZF[_PLUGIN_DIR]="${0:h}"
 FZF[_ALIASES]=""
 FZF[_FUNCTIONS]=""
 
+# Saving the current state for any modified global environment variables.
 FZF[_OLD_DEFAULT_COMMAND]="${FZF_DEFAULT_COMMAND}"
 FZF[_OLD_CTRL_T_COMMAND]="${FZF_CTRL_T_COMMAND}"
 FZF[_OLD_ALT_C_COMMAND]="${FZF_ALT_C_COMMAND}"
@@ -147,6 +148,7 @@ fzf_plugin_unload() {
     # Remove the global data variable.
     unset FZF
 
+    # Reset global environment variables .
     FZF_DEFAULT_COMMAND="${FZF[_OLD_DEFAULT_COMMAND]}"
     FZF_ALT_C_COMMAND="${FZF[_OLD_ALT_C_COMMAND]}"
     FZF_CTRL_T_COMMAND="${FZF[_OLD_CTRL_T_COMMAND]}"
