@@ -1,8 +1,10 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 #
-# Plugin Name: fzf
-# Description: Zsh plugin to integrate the fzf tool into Zsh.
-# Repository: https://github.com/johnstonskj/zsh-fzf-plugin
+# @name: fzf
+# @brief: Integrate the fzf tool into Zsh.
+# @repository: https://github.com/johnstonskj/zsh-fzf-plugin
+# @version: 0.1.1
+# @license: MIT AND Apache-2.0
 #
 # Public variables:
 #
