@@ -27,13 +27,13 @@ fzf_plugin_init() {
 
     # Use fd (https://github.com/sharkdp/fd).
     @zplugins_envvar_save fzf FZF_DEFAULT_COMMAND
-    export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+    typeset -g FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 
     @zplugins_envvar_save fzf FZF_CTRL_T_COMMAND
-    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    typeset -g FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
     @zplugins_envvar_save fzf FZF_ALT_C_COMMAND
-    export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+    typeset -g FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 
     # Use fd for listing path candidates.
     # - The first argument to the function ($1) is the base path to start traversal
@@ -52,10 +52,10 @@ fzf_plugin_init() {
     local show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
     @zplugins_envvar_save fzf FZF_CTRL_T_OPTS
-    export FZF_CTRL_T_OPTS="--preview '${show_file_or_dir_preview}'"
+    typeset -g FZF_CTRL_T_OPTS="--preview '${show_file_or_dir_preview}'"
 
     @zplugins_envvar_save fzf FZF_ALT_C_OPTS
-    export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
+    typeset -g FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 
     # Advanced customization of fzf options via _fzf_comprun function
     # - The first argument to the function is the name of the command.
